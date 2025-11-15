@@ -31,11 +31,14 @@ export default function BrandStory() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="relative h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600"
+          className="relative h-96 rounded-2xl overflow-hidden shadow-xl"
         >
-          <div className="absolute inset-0 flex items-center justify-center text-white text-6xl font-bold opacity-20">
-            EDX
-          </div>
+          <img
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop"
+            alt="Technology and digital innovation"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
         </motion.div>
       </div>
     </section>

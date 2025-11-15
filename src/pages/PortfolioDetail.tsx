@@ -57,6 +57,51 @@ const projects: Record<string, {
       "200% increase in brand awareness",
     ],
   },
+  "brand-identity": {
+    id: "brand-identity",
+    title: "Startup Brand Identity",
+    category: "Branding & Design",
+    description: "Complete brand redesign with modern visual identity",
+    longDescription: "We created a comprehensive brand identity system for a tech startup, including logo design, color palette, typography, and brand guidelines. The new identity perfectly captures the company's innovative spirit and modern approach.",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=600&fit=crop",
+    tags: ["Branding", "Logo Design", "Visual Identity"],
+    results: [
+      "Complete brand identity system",
+      "Modern and memorable logo design",
+      "Comprehensive brand guidelines",
+      "Increased brand recognition by 250%",
+    ],
+  },
+  "ecommerce-platform": {
+    id: "ecommerce-platform",
+    title: "E-commerce Platform",
+    category: "Web Development",
+    description: "Scalable e-commerce solution with 200% sales growth",
+    longDescription: "We developed a fully-featured e-commerce platform with advanced shopping cart functionality, payment integration, inventory management, and admin dashboard. The platform is built for scalability and handles high traffic efficiently.",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop",
+    tags: ["E-commerce", "React", "Web Development"],
+    results: [
+      "200% increase in online sales",
+      "Seamless payment integration",
+      "Mobile-responsive design",
+      "Advanced admin dashboard",
+    ],
+  },
+  "content-strategy": {
+    id: "content-strategy",
+    title: "Content Marketing Strategy",
+    category: "Content Creation",
+    description: "Comprehensive content strategy driving 500% engagement",
+    longDescription: "We developed and executed a comprehensive content marketing strategy that included blog posts, social media content, email campaigns, and video content. The strategy focused on engaging the target audience and building brand authority.",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&h=600&fit=crop",
+    tags: ["Content", "Strategy", "Marketing"],
+    results: [
+      "500% increase in content engagement",
+      "200+ high-quality blog posts",
+      "Consistent brand voice across all channels",
+      "Significant improvement in SEO rankings",
+    ],
+  },
 };
 
 export default function PortfolioDetail() {

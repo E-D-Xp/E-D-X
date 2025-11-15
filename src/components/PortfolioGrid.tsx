@@ -32,7 +32,7 @@ const projects = [
     title: "Startup Brand Identity",
     category: "Branding & Design",
     description: "Complete brand redesign with modern visual identity",
-    image: "https://images.unsplash.com/photo-1561070791-2526d38294b5?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
     tags: ["Branding", "Logo Design"],
   },
   {
@@ -48,7 +48,7 @@ const projects = [
     title: "Content Marketing Strategy",
     category: "Content Creation",
     description: "Comprehensive content strategy driving 500% engagement",
-    image: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2d82a?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop",
     tags: ["Content", "Strategy"],
   },
 ];
