@@ -53,7 +53,7 @@ export default function ServicesShowcase() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: isMobile ? "0px" : "-100px" }}
-          transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
@@ -73,7 +73,7 @@ export default function ServicesShowcase() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: isMobile ? "0px" : "-50px" }}
-                transition={{ duration: 1.2, delay: index * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{ duration: 0.7, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                 className="p-6 rounded-xl bg-white/90 dark:bg-gray-800 shadow-md dark:shadow-none hover:shadow-xl dark:hover:shadow-lg transition-all duration-500 ease-out hover:scale-105 border border-gray-100 dark:border-gray-700"
               >
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center mb-4">

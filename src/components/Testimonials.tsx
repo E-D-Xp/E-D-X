@@ -98,7 +98,7 @@ export default function Testimonials() {
           <div className="flex justify-center items-center mt-8 space-x-4">
             <button
               onClick={prevTestimonial}
-              className="p-2 rounded-full bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-md"
+              className="p-2 rounded-full bg-white/95 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-md dark:shadow-none"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -119,7 +119,7 @@ export default function Testimonials() {
             </div>
             <button
               onClick={nextTestimonial}
-              className="p-2 rounded-full bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-md"
+              className="p-2 rounded-full bg-white/95 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-md dark:shadow-none"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-6 h-6" />
