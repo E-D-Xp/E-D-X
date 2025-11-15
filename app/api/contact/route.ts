@@ -43,6 +43,58 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // API Configuration
+    const API_KEY = "2b0298f5-6d94-42f7-a43e-b5ce14b903aa";
+    const API_URL = process.env.CONTACT_API_URL || "https://api.example.com/contact";
+
+    // Call external API with the provided key
+    try {
+      const apiResponse = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-Key": API_KEY,
+          "Authorization": `Bearer ${API_KEY}`,
+          "api-key": API_KEY,
+        },
+        body: JSON.stringify({
+          name: trimmedName,
+          email: trimmedEmail,
+          message: trimmedMessage,
+        }),
+      });
+
+      let apiData;
+      const contentType = apiResponse.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        apiData = await apiResponse.json();
+      } else {
+        const textData = await apiResponse.text();
+        apiData = { response: textData, raw: true };
+      }
+
+      // Return the API response directly
+      return NextResponse.json(
+        {
+          success: apiResponse.ok,
+          message: apiData.message || apiData.response || apiData.data || JSON.stringify(apiData),
+          data: apiData,
+        },
+        { status: apiResponse.ok ? 200 : apiResponse.status }
+      );
+    } catch (apiError) {
+      console.error("API Error:", apiError);
+      // Return API error response
+      return NextResponse.json(
+        {
+          success: false,
+          error: apiError instanceof Error ? apiError.message : "API request failed",
+          message: apiError instanceof Error ? apiError.message : "Failed to connect to API",
+        },
+        { status: 500 }
+      );
+    }
+
     // Create transporter using Gmail SMTP
     // Note: You'll need to set these environment variables
     const transporter = nodemailer.createTransport({

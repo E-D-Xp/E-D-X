@@ -25,37 +25,49 @@ export default function ContactForm() {
     setAlert(null);
 
     try {
-      const response = await fetch("/api/contact", {
+      // Web3Forms API endpoint
+      const API_KEY = "2b0298f5-6d94-42f7-a43e-b5ce14b903aa";
+      
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: API_KEY,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
       });
 
       const data = await response.json();
 
       if (response.ok && data.success) {
+        // Display Web3Forms response
+        const responseMessage = data.message || "Your message has been sent successfully. We'll get back to you soon!";
         setAlert({
           type: "success",
-          message: data.message || "Your message has been sent successfully. We'll get back to you soon!",
+          message: responseMessage,
         });
         setFormData({ name: "", email: "", message: "" });
-        // Reset alert after 5 seconds
-        setTimeout(() => setAlert(null), 5000);
+        // Reset alert after 8 seconds to allow reading the response
+        setTimeout(() => setAlert(null), 8000);
       } else {
+        // Display error response from Web3Forms
+        const errorMessage = data.message || data.error || "Failed to send message. Please try again.";
         setAlert({
           type: "error",
-          message: data.error || "Failed to send message. Please try again.",
+          message: errorMessage,
         });
-        // Reset error alert after 5 seconds
-        setTimeout(() => setAlert(null), 5000);
+        // Reset error alert after 8 seconds
+        setTimeout(() => setAlert(null), 8000);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
       setAlert({
         type: "error",
-        message: "An error occurred. Please try again later or contact us directly.",
+        message: error instanceof Error ? error.message : "An error occurred. Please try again later or contact us directly.",
       });
       // Reset error alert after 5 seconds
       setTimeout(() => setAlert(null), 5000);
