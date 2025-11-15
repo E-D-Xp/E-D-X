@@ -63,7 +63,7 @@ export default function PortfolioGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-          className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out"
+          className="group relative overflow-hidden rounded-2xl bg-white/95 dark:bg-gray-800 shadow-xl dark:shadow-lg hover:shadow-2xl dark:hover:shadow-2xl transition-all duration-500 ease-out border border-gray-100/50 dark:border-gray-700"
         >
           <Link to={`/portfolio/${project.id}`}>
             <div className="relative h-64 overflow-hidden">

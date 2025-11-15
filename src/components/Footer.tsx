@@ -43,7 +43,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50 shadow-sm">
+          <div className="bg-white/95 dark:bg-gray-800/60 backdrop-blur-md rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50 shadow-lg dark:shadow-none">
             <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-gradient-to-b from-blue-600 to-purple-600 rounded-full"></span>
               Contact

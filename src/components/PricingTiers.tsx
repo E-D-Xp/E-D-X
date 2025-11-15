@@ -81,7 +81,7 @@ export default function PricingTiers() {
             className={`relative p-8 rounded-2xl ${
               tier.popular
                 ? "bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-2xl scale-105"
-                : "bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700"
+                : "bg-white/95 dark:bg-gray-800 border-2 border-gray-200/50 dark:border-gray-700 shadow-lg dark:shadow-none hover:shadow-xl dark:hover:shadow-lg"
             }`}
           >
             {tier.popular && (

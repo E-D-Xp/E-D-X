@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Search, Megaphone, Palette, Code, PenTool, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const services = [
   {
@@ -36,13 +37,22 @@ const services = [
 ];
 
 export default function ServicesShowcase() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: isMobile ? "0px" : "-100px" }}
           transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-center mb-16"
         >
@@ -62,9 +72,9 @@ export default function ServicesShowcase() {
                 key={service.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, margin: isMobile ? "0px" : "-50px" }}
                 transition={{ duration: 1.2, delay: index * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-                className="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 hover:shadow-lg transition-all duration-500 ease-out hover:scale-105"
+                className="p-6 rounded-xl bg-white/90 dark:bg-gray-800 shadow-md dark:shadow-none hover:shadow-xl dark:hover:shadow-lg transition-all duration-500 ease-out hover:scale-105 border border-gray-100 dark:border-gray-700"
               >
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-white" />

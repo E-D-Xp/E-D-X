@@ -85,7 +85,7 @@ export default function ServicesDetail() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-                className="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 hover:shadow-lg transition-all duration-500 ease-out"
+                className="p-8 rounded-xl bg-white/90 dark:bg-gray-800 shadow-md dark:shadow-none hover:shadow-xl dark:hover:shadow-lg transition-all duration-500 ease-out border border-gray-100/50 dark:border-gray-700"
               >
                 <div className="w-14 h-14 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center mb-6">
                   <Icon className="w-7 h-7 text-white" />
@@ -136,7 +136,7 @@ export default function ServicesDetail() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-                className="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 hover:shadow-lg transition-all duration-500 ease-out"
+                className="p-8 rounded-xl bg-white/90 dark:bg-gray-800 shadow-md dark:shadow-none hover:shadow-xl dark:hover:shadow-lg transition-all duration-500 ease-out border border-gray-100/50 dark:border-gray-700"
               >
                 <div className="w-14 h-14 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center mb-6">
                   <Icon className="w-7 h-7 text-white" />

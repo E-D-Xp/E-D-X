@@ -55,7 +55,7 @@ export default function WhyChooseEDX() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-            className="flex items-start space-x-4 p-6 bg-white dark:bg-gray-800 rounded-xl hover:shadow-lg transition-all duration-500 ease-out"
+            className="flex items-start space-x-4 p-6 bg-white/95 dark:bg-gray-800 rounded-xl shadow-md dark:shadow-none hover:shadow-xl dark:hover:shadow-lg transition-all duration-500 ease-out border border-gray-100/50 dark:border-gray-700"
           >
             <CheckCircle2 className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
             <div>

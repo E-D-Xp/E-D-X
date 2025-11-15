@@ -1,6 +1,6 @@
-
 import { motion } from "framer-motion";
 import { Users, Award, Briefcase, TrendingUp } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const stats = [
   { icon: Users, value: "500+", label: "Happy Clients" },
@@ -10,6 +10,15 @@ const stats = [
 ];
 
 export default function Stats() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,7 +30,7 @@ export default function Stats() {
                 key={stat.label}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, margin: isMobile ? "0px" : "-50px" }}
                 transition={{ duration: 1.2, delay: index * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
                 className="text-center"
               >

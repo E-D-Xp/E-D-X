@@ -81,7 +81,7 @@ export default function ContactForm() {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-      className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg"
+      className="bg-white/95 dark:bg-gray-800 rounded-2xl p-8 shadow-xl dark:shadow-lg border border-gray-100/50 dark:border-gray-700 backdrop-blur-sm"
     >
       <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Send us a message</h2>
 

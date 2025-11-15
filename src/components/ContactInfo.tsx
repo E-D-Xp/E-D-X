@@ -62,7 +62,7 @@ export default function ContactInfo() {
         </div>
       </div>
 
-      <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
+      <div className="bg-white/90 dark:bg-gray-800 rounded-2xl p-8 shadow-md dark:shadow-none border border-gray-100/50 dark:border-gray-700">
         <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Why Contact Us?</h3>
         <ul className="space-y-3 text-gray-600 dark:text-gray-400">
           <li className="flex items-start">

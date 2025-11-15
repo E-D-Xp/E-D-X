@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
@@ -32,6 +31,14 @@ const testimonials = [
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const nextTestimonial = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -42,12 +49,12 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section className="py-20 bg-gray-50/80 dark:bg-gray-800 backdrop-blur-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: isMobile ? "0px" : "-100px" }}
           transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-center mb-16"
         >
@@ -67,7 +74,7 @@ export default function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-white dark:bg-gray-900 p-8 md:p-12 rounded-2xl shadow-lg"
+              className="bg-white/95 dark:bg-gray-900 p-8 md:p-12 rounded-2xl shadow-xl dark:shadow-lg border border-gray-100/50 dark:border-gray-700 backdrop-blur-sm"
             >
               <div className="flex mb-4">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
