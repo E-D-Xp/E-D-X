@@ -11,8 +11,8 @@ export default function ContactCTA() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="max-w-3xl mx-auto text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -23,7 +23,7 @@ export default function ContactCTA() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-500 ease-out"
           >
             Contact Us Now
             <ArrowRight className="ml-2 w-5 h-5" />

@@ -35,8 +35,8 @@ export default function ContactInfo() {
     <motion.div
       initial={{ opacity: 0, x: 20 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       className="space-y-8"
     >
       <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-8 text-white">

@@ -10,7 +10,7 @@ export default function BrandStory() {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
             Our Story
@@ -31,7 +31,7 @@ export default function BrandStory() {
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="relative h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600"
         >
           <div className="absolute inset-0 flex items-center justify-center text-white text-6xl font-bold opacity-20">

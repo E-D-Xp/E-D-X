@@ -60,8 +60,8 @@ export default function PricingTiers() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         className="text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
@@ -78,8 +78,8 @@ export default function PricingTiers() {
             key={tier.name}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
             className={`relative p-8 rounded-2xl ${
               tier.popular
                 ? "bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-2xl scale-105"
@@ -117,7 +117,7 @@ export default function PricingTiers() {
             </ul>
             <Link
               href="/contact"
-              className={`block w-full text-center py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
+              className={`block w-full text-center py-3 px-6 rounded-lg font-semibold transition-all duration-500 ease-out ${
                 tier.popular
                   ? "bg-white text-blue-600 hover:shadow-lg"
                   : "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg"

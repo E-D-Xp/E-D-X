@@ -13,13 +13,13 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+            <h3 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
               EDX
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4 max-w-md">
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 max-w-md">
               Transforming brands through innovative digital marketing strategies and expert freelancing services.
             </p>
             <div className="flex space-x-4">
@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Quick Links</h4>
+            <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">Quick Links</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
@@ -68,15 +68,15 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+            <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">Contact</h4>
+            <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
               <li>Email: elitedigitalxp@gmail.com</li>
               <li>Phone: +91 97875 97478</li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-gray-600 dark:text-gray-400">
+        <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-600 dark:text-gray-400">
           <p>&copy; {currentYear} EDX. All rights reserved.</p>
         </div>
       </div>

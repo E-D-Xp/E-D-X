@@ -68,8 +68,8 @@ export default function ContactForm() {
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg"
     >
       <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Send us a message</h2>
@@ -135,7 +135,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-500 ease-out disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             "Sending..."
