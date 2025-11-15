@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
+import { Facebook, Twitter, Instagram, Mail } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,8 +8,7 @@ export default function Footer() {
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:contact@edx.com", label: "Email" },
+    { icon: Mail, href: "mailto:elitedigitalxp@gmail.com", label: "Email" },
   ];
 
   return (
@@ -71,8 +70,8 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-              <li>Email: contact@edx.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
+              <li>Email: elitedigitalxp@gmail.com</li>
+              <li>Phone: +91 97875 97478</li>
             </ul>
           </div>
         </div>

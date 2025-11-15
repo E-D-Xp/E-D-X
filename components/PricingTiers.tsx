@@ -7,7 +7,7 @@ import Link from "next/link";
 const tiers = [
   {
     name: "Starter",
-    price: "$999",
+    price: "₹3,000",
     period: "month",
     description: "Perfect for small businesses getting started",
     features: [
@@ -21,7 +21,7 @@ const tiers = [
   },
   {
     name: "Professional",
-    price: "$2,499",
+    price: "₹6,000",
     period: "month",
     description: "Ideal for growing businesses",
     features: [

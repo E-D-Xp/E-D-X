@@ -2,7 +2,13 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Send, Calendar } from "lucide-react";
+import { Send, Facebook, Twitter, Instagram } from "lucide-react";
+
+const socialLinks = [
+  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Instagram, href: "#", label: "Instagram" },
+];
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -11,21 +17,51 @@ export default function ContactForm() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [alert, setAlert] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setAlert(null);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
+      const data = await response.json();
 
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
+      if (response.ok && data.success) {
+        setAlert({
+          type: "success",
+          message: data.message || "Your message has been sent successfully. We'll get back to you soon!",
+        });
+        setFormData({ name: "", email: "", message: "" });
+        // Reset alert after 5 seconds
+        setTimeout(() => setAlert(null), 5000);
+      } else {
+        setAlert({
+          type: "error",
+          message: data.error || "Failed to send message. Please try again.",
+        });
+        // Reset error alert after 5 seconds
+        setTimeout(() => setAlert(null), 5000);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setAlert({
+        type: "error",
+        message: "An error occurred. Please try again later or contact us directly.",
+      });
+      // Reset error alert after 5 seconds
+      setTimeout(() => setAlert(null), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -38,9 +74,15 @@ export default function ContactForm() {
     >
       <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Send us a message</h2>
 
-      {isSubmitted && (
-        <div className="mb-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg">
-          Thank you! Your message has been sent. We'll get back to you soon.
+      {alert && (
+        <div
+          className={`mb-6 p-4 rounded-lg ${
+            alert.type === "success"
+              ? "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200"
+              : "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200"
+          }`}
+        >
+          {alert.message}
         </div>
       )}
 
@@ -71,7 +113,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
-            placeholder="your.email@example.com"
+            placeholder="your.email@gmail.com"
           />
         </div>
 
@@ -107,14 +149,24 @@ export default function ContactForm() {
       </form>
 
       <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Or schedule a call:</p>
-        <a
-          href="#"
-          className="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white font-semibold rounded-lg hover:border-blue-600 dark:hover:border-blue-400 transition-all duration-300"
-        >
-          <Calendar className="mr-2 w-5 h-5" />
-          Book a Consultation
-        </a>
+        <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-white">Follow Us</h3>
+        <div className="flex space-x-4">
+          {socialLinks.map((social) => {
+            const Icon = social.icon;
+            return (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors"
+                aria-label={social.label}
+              >
+                <Icon className="w-6 h-6" />
+              </a>
+            );
+          })}
+        </div>
       </div>
     </motion.div>
   );

@@ -12,6 +12,7 @@ A fast, modern, and fully responsive website built with Next.js, TypeScript, and
 - 🔍 **SEO Optimized** - Built-in metadata and optimization
 - 🖼️ **Image Optimization** - Next.js Image component
 - ♿ **Accessible** - WCAG compliant components
+- 📧 **Contact Form** - Working email functionality with Nodemailer
 
 ## Pages
 
@@ -76,6 +77,18 @@ EDX/
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
+
+## Email Configuration
+
+The contact form sends emails to `elitedigitalxp@gmail.com`. To set up email functionality:
+
+1. Create a `.env.local` file in the root directory
+2. Add your Gmail credentials:
+   ```env
+   SMTP_USER=your-email@gmail.com
+   SMTP_PASS=your-app-password
+   ```
+3. See `EMAIL_SETUP.md` for detailed setup instructions
 
 ## Customization
 

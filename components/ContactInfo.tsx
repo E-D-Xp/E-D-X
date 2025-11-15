@@ -1,20 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@edx.com",
-    href: "mailto:contact@edx.com",
+    value: "elitedigitalxp@gmail.com",
+    href: "mailto:elitedigitalxp@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+91 97875 97478",
+    href: "tel:+919787597478",
   },
   {
     icon: MapPin,
@@ -28,13 +28,6 @@ const contactInfo = [
     value: "Mon - Fri: 9:00 AM - 6:00 PM EST",
     href: "#",
   },
-];
-
-const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
 ];
 
 export default function ContactInfo() {
@@ -64,27 +57,6 @@ export default function ContactInfo() {
                   <p className="font-semibold mb-1">{info.label}</p>
                   <p className="text-blue-100">{info.value}</p>
                 </div>
-              </a>
-            );
-          })}
-        </div>
-      </div>
-
-      <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
-        <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-white">Follow Us</h3>
-        <div className="flex space-x-4">
-          {socialLinks.map((social) => {
-            const Icon = social.icon;
-            return (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors"
-                aria-label={social.label}
-              >
-                <Icon className="w-6 h-6" />
               </a>
             );
           })}
