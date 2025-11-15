@@ -97,7 +97,7 @@ The contact form sends emails to `elitedigitalxp@gmail.com`. To set up email fun
 - Add/remove services in respective components
 - Update portfolio projects in `PortfolioGrid.tsx`
 
-## License 
+## License
 
 This project is private and proprietary.
 
