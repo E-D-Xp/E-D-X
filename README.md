@@ -1,16 +1,16 @@
 # EDX - Digital Marketing & Freelancing Brand Website
 
-A fast, modern, and fully responsive website built with Next.js, TypeScript, and Tailwind CSS.
+A fast, modern, and fully responsive website built with React, Vite, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- ⚡ **Next.js 14** - Latest Next.js with App Router
+- ⚡ **Vite** - Lightning-fast build tool and dev server
+- ⚛️ **React 18** - Modern React with hooks and functional components
 - 🎨 **Tailwind CSS** - Modern utility-first CSS framework
 - 🌓 **Dark/Light Mode** - Seamless theme switching
 - 📱 **Fully Responsive** - Optimized for all devices
 - 🎭 **Smooth Animations** - Framer Motion for beautiful transitions
-- 🔍 **SEO Optimized** - Built-in metadata and optimization
-- 🖼️ **Image Optimization** - Next.js Image component
+- 🛣️ **React Router** - Client-side routing for SPA navigation
 - ♿ **Accessible** - WCAG compliant components
 - 📧 **Contact Form** - Working email functionality with Nodemailer
 
@@ -41,39 +41,53 @@ npm install
 npm run dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+3. Open the URL shown in the terminal (typically [http://localhost:5173](http://localhost:5173)) in your browser.
 
 ### Build for Production
 
 ```bash
 npm run build
-npm start
+npm run preview
 ```
+
+The built files will be in the `dist/` directory. Use `npm run preview` to preview the production build locally.
 
 ## Project Structure
 
 ```
 EDX/
-├── app/                    # Next.js App Router
-│   ├── layout.tsx         # Root layout with metadata
-│   ├── page.tsx           # Home page
-│   ├── services/          # Services page
-│   ├── about/             # About page
-│   ├── portfolio/         # Portfolio pages
-│   └── contact/           # Contact page
-├── components/            # React components
-│   ├── Header.tsx        # Navigation header
-│   ├── Footer.tsx        # Site footer
-│   ├── ThemeProvider.tsx # Dark/light mode provider
-│   └── ...               # Other components
+├── src/
+│   ├── App.tsx           # Main app component with routing
+│   ├── main.tsx          # Application entry point
+│   ├── index.css         # Global styles
+│   ├── pages/            # Page components
+│   │   ├── Home.tsx      # Home page
+│   │   ├── Services.tsx  # Services page
+│   │   ├── About.tsx     # About page
+│   │   ├── Portfolio.tsx # Portfolio listing
+│   │   ├── PortfolioDetail.tsx # Portfolio detail page
+│   │   ├── Contact.tsx   # Contact page
+│   │   └── NotFound.tsx  # 404 page
+│   └── components/       # React components
+│       ├── Header.tsx    # Navigation header
+│       ├── Footer.tsx    # Site footer
+│       ├── ThemeProvider.tsx # Dark/light mode provider
+│       ├── Hero.tsx      # Hero section
+│       ├── ServicesShowcase.tsx # Services showcase
+│       └── ...           # Other components
 ├── public/               # Static assets
-└── ...config files
+├── index.html            # HTML template
+├── vite.config.ts        # Vite configuration
+├── tailwind.config.ts    # Tailwind CSS configuration
+└── tsconfig.json         # TypeScript configuration
 ```
 
 ## Tech Stack
 
-- **Framework**: Next.js 14
+- **Build Tool**: Vite 5
+- **Framework**: React 18
 - **Language**: TypeScript
+- **Routing**: React Router DOM
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
