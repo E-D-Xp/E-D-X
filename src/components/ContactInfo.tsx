@@ -18,13 +18,13 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Address",
-    value: "123 Business St, Suite 100, City, ST 12345",
+    value: "Forest Road , Theni",
     href: "#",
   },
   {
     icon: Clock,
     label: "Business Hours",
-    value: "Mon - Fri: 9:00 AM - 6:00 PM EST",
+    value: "Mon to Sat: 6.00 p.m to 10.00 p.m",
     href: "#",
   },
 ];
