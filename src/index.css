@@ -23,21 +23,15 @@ html {
   scroll-padding-top: 0;
 }
 
-/* Instant scroll for route changes (handled by ScrollToTop component) */
-/* Smooth scroll for anchor links with reduced visual delay */
-
-/* Mobile: Reduced smooth scroll effect - faster, less smooth */
 @media (max-width: 768px) {
   html {
     scroll-behavior: smooth;
   }
   
-  /* Reduce smooth scroll effect on mobile - make it faster/less smooth */
   * {
     scroll-behavior: smooth;
   }
   
-  /* Override browser default smooth scroll timing */
   @supports (scroll-behavior: smooth) {
     html {
       scroll-behavior: smooth;
@@ -54,25 +48,21 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Mobile: Reduce or disable transition effects to minimize shutter effect */
 @media (max-width: 768px) {
   body {
-    transition: background-color 0.1s ease, color 0.1s ease; /* Faster transition on mobile */
+    transition: background-color 0.1s ease, color 0.1s ease;
   }
   
-  /* Reduce all transition durations on mobile for smoother experience */
   * {
     transition-duration: 0.15s !important;
     transition-timing-function: ease-out !important;
   }
   
-  /* Disable transitions for scroll-related properties on mobile */
   html, body {
     transition: none !important;
   }
 }
 
-/* Light theme enhancements - shadows and opacity */
 :root {
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -81,7 +71,6 @@ body {
   --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
 
-/* Enhanced shadows for light theme cards */
 .light-theme-card {
   box-shadow: var(--shadow-md);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -92,7 +81,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Light theme background with subtle opacity */
 .light-bg-overlay {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
@@ -103,7 +91,6 @@ body {
     text-wrap: balance;
   }
   
-  /* Light theme specific shadow utilities */
   .light-shadow-sm {
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   }

@@ -1,7 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
-// This would typically come from a database or CMS
 const projects: Record<string, {
   id: string;
   title: string;

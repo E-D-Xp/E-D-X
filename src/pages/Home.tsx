@@ -9,8 +9,8 @@ export default function Home() {
     <>
       <Hero />
       <ServicesShowcase />
-      {/* <Stats /> */}
-      {/* <Testimonials /> */}
+      <Stats />
+      <Testimonials />
       <ContactCTA />
     </>
   );
