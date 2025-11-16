@@ -34,8 +34,8 @@ export default function BrandStory() {
           className="relative h-96 rounded-2xl overflow-hidden shadow-2xl dark:shadow-lg border border-gray-200/50 dark:border-gray-700"
         >
           <img
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop"
-            alt="Technology and digital innovation"
+            src="http://certiprof.com/cdn/shop/articles/DIGITAL_MARKETING_BY_CERTIPROF.webp?v=1742398487"
+            alt="Digital Marketing"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
