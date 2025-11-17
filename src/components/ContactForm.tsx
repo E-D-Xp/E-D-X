@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { Send, Facebook, Twitter, Instagram } from "lucide-react";
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61584076853306", label: "Facebook" },
+  { icon: Twitter, href: "https://x.com/E_D_Xp", label: "Twitter" },
+  { icon: Instagram, href: "https://www.instagram.com/elitedigitalxperts/", label: "Instagram" },
 ];
 
 export default function ContactForm() {
