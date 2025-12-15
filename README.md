@@ -57,29 +57,29 @@ The built files will be in the `dist/` directory. Use `npm run preview` to previ
 ```
 EDX/
 ├── src/
-│   ├── App.tsx           # Main app component with routing
-│   ├── main.tsx          # Application entry point
-│   ├── index.css         # Global styles
-│   ├── pages/            # Page components
-│   │   ├── Home.tsx      # Home page
-│   │   ├── Services.tsx  # Services page
-│   │   ├── About.tsx     # About page
-│   │   ├── Portfolio.tsx # Portfolio listing
-│   │   ├── PortfolioDetail.tsx # Portfolio detail page
-│   │   ├── Contact.tsx   # Contact page
-│   │   └── NotFound.tsx  # 404 page
-│   └── components/       # React components
-│       ├── Header.tsx    # Navigation header
-│       ├── Footer.tsx    # Site footer
-│       ├── ThemeProvider.tsx # Dark/light mode provider
-│       ├── Hero.tsx      # Hero section
-│       ├── ServicesShowcase.tsx # Services showcase
-│       └── ...           # Other components
-├── public/               # Static assets
-├── index.html            # HTML template
-├── vite.config.ts        # Vite configuration
-├── tailwind.config.ts    # Tailwind CSS configuration
-└── tsconfig.json         # TypeScript configuration
+│   ├── App.tsx           
+│   ├── main.tsx          
+│   ├── index.css        
+│   ├── pages/            
+│   │   ├── Home.tsx      
+│   │   ├── Services.tsx  
+│   │   ├── About.tsx     
+│   │   ├── Portfolio.tsx 
+│   │   ├── PortfolioDetail.tsx
+│   │   ├── Contact.tsx   
+│   │   └── NotFound.tsx  
+│   └── components/     
+│       ├── Header.tsx    
+│       ├── Footer.tsx    
+│       ├── ThemeProvider.tsx 
+│       ├── Hero.tsx      
+│       ├── ServicesShowcase.tsx 
+│       └── ...           
+├── public/               
+├── index.html           
+├── vite.config.ts        
+├── tailwind.config.ts    
+└── tsconfig.json         
 ```
 
 ## Tech Stack
